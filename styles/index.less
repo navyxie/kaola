@@ -1,0 +1,209 @@
+@mainWidth:1180px;
+img{
+	vertical-align: middle;
+}
+.nav{
+	overflow: hidden;
+	li{
+		float: left;
+	}
+} 
+#header{	
+	.header{
+		margin:auto;
+		width: @mainWidth;
+		position: relative;
+		height: 70px;
+		background: #F2912B;	
+		overflow:hidden; 
+		.logo{
+			position: absolute;
+			img{
+				width: 200px;
+			}
+		}
+		.headerNav{
+			margin-left: 220px;
+			height: 70px;
+			line-height: 70px;
+			a{
+				color: #fff;
+				font-size: 1.6em;
+				font-weight: 400;
+				display: block;
+				text-transform: lowercase;
+				padding: 0 20px;
+				&:hover{
+					color: #666;
+					transition:all 1s;
+					-webkit-transition:all 1s;
+					-moz-transition:all 1s;
+					-ms-transition:all 1s;
+					-o-transition:all 1s					
+				}
+				&.selected{
+					background-color: #fff;
+					color: #666;
+				}
+			}
+		}
+	}
+}
+#footer{
+	margin:auto;
+	width: @mainWidth;
+	background-color: #fbfbfb;
+	padding: 20px 0;
+	ul{
+		li{
+			color: #4b4b4b;
+			margin-left: 10px;
+			a{
+				color: #aaa;
+			}
+		}
+	}
+}
+#container{
+	.index{	
+		.banner{
+			background: #42C6F6;
+			height: 518px;
+			overflow: hidden; 
+			ul{
+				margin:auto;
+				height: 518px;
+				width: @mainWidth;
+				max-width: 100%;
+				img{
+					max-width: 100%;
+				}
+			}
+		}
+		.content{
+			margin: auto;
+			width:@mainWidth;
+			.indexItem{
+				overflow: hidden;
+				padding: 10px;
+				.fLeft{
+					width: 300px;
+					h2{
+						animation-delay: 2s;
+						-webkit-animation-delay: 2s;
+						-moz-animation-delay: 2s;
+						-ms-animation-delay: 2s;
+						-o-animation-delay: 2s;
+						padding:200px 0 10px; 
+						span{
+							animation-delay: 3s;
+							-webkit-animation-delay: 3s;
+							-moz-animation-delay: 3s;
+							-ms-animation-delay: 3s;
+							-o-animation-delay: 3s;  
+							animation-duration: 4s;
+							-webkit-animation-duration: 4s;
+							-moz-animation-duration: 4s;
+							-ms-animation-duration: 4s;
+							-o-animation-duration: 4s;
+							color:#000;
+							font-size: 20px;
+							font-weight: bold;
+						}
+					}
+					p{
+						animation-delay: 1s;
+						-webkit-animation-delay: 1s;
+						-moz-animation-delay: 1s;
+						-ms-animation-delay: 1s;
+						-o-animation-delay: 1s;
+					}					
+				}
+				.fRight{
+					width: 840px;					
+					img{
+						width: 100%;
+						max-width: 100%;
+						animation-delay: 2s;
+						-webkit-animation-delay: 2s;
+						-moz-animation-delay: 2s;
+						-ms-animation-delay: 2s;
+						-o-animation-delay: 2s;
+					}
+					.relative{
+						position: relative;
+						.scrollImg{
+							position: absolute;
+							width: 100px;
+							height: 100px; 
+							top:100px;
+							left: 100px;
+							animation-delay: 3s;
+							-webkit-animation-delay: 3s;
+							-moz-animation-delay: 3s;
+							-ms-animation-delay: 3s;
+							-o-animation-delay: 3s;
+						}
+					}
+				}
+				.swingTitle{
+					padding: 20px 0;
+					font-size: 18px;
+					text-align: center;
+					animation-duration: 4s;
+					-webkit-animation-duration: 4s;
+					-moz-animation-duration: 4s;
+					-ms-animation-duration: 4s;
+					-o-animation-duration: 4s;
+				}
+			}
+		}
+	}
+}
+.pageView{
+	margin: auto;
+	width:@mainWidth;
+	max-width: 100%;
+}
+.pageView100{
+	width: 100%;
+	max-width: 100%;
+}
+// .bank{
+// 	animation-delay: 0s;
+// 	-webkit-animation-delay: 0s;
+// 	-moz-animation-delay: 0s;
+// 	-ms-animation-delay: 0s;
+// 	-o-animation-delay: 0s;
+// }
+// .baobao{
+// 	animation-delay: 1s;
+// 	-webkit-animation-delay: 1s;
+// 	-moz-animation-delay: 1s;
+// 	-ms-animation-delay: 1s;
+// 	-o-animation-delay: 1s;
+// }
+// .kaolalicai{
+// 	animation-delay: 2s;
+// 	-webkit-animation-delay: 2s;
+// 	-moz-animation-delay: 2s;
+// 	-ms-animation-delay: 2s;
+// 	-o-animation-delay: 2s;
+// 	.subItem{
+// 		animation-delay: 3s;
+// 		-webkit-animation-delay: 3s;
+// 		-moz-animation-delay: 3s;
+// 		-ms-animation-delay: 3s;
+// 		-o-animation-delay: 3s;
+// 		animation-duration: 3s;
+// 		-webkit-animation-duration: 2s;
+// 		-moz-animation-duration: 2s;
+// 		-ms-animation-duration: 2s;
+// 		-o-animation-duration: 2s;
+// 	}
+// }
+.disclaimerView,.privacyView{
+	p{
+		padding: 5px 10px; 
+	}
+}

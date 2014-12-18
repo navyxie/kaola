@@ -1,0 +1,11 @@
+<div id="header" class="wid100" ng-controller="headerCtrl">
+	<div class="header">
+		<div class="logo"><a ng-click="setNavIndex(0)" href="/" ><img ng-src="images/logo.png" /></a></div>
+		<ul class="headerNav nav">
+			<li><a ng-click="setNavIndex(0)" ng-class="{selected:index == 0}" href="/">首页</a></li>
+			<li><a ng-click="setNavIndex(1)" ng-class="{selected:index == 1}" href="#/team">考拉团队</a></li>
+			<li><a ng-click="setNavIndex(2)" ng-class="{selected:index == 2}" href="#/guide">新手入门</a></li>
+			<li><a ng-click="setNavIndex(3)" ng-class="{selected:index == 3}" href="#/contact">联系考拉</a></li>
+		</ul>
+	</div>
+</div>

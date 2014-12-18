@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="kaolaApp">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" id="chaoBaiDa" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="Description" content="考拉理财" />
+    <title>考拉理财</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/angular-carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">     
+</head>
+<body>
+	<div ng-include="'views/header/view.html'"></div>
+	<div ng-view id="container"></div>
+	<div ng-include="'views/footer/view.html'"></div>
+
+	<script type="text/javascript" src="js/libs/angular.min.js"></script>
+	<script type="text/javascript" src="js/libs/angular-route.min.js"></script>	
+	<script type="text/javascript" src="js/directives/slide.js"></script>
+	<script type="text/javascript" src="views/index/view.js"></script>
+	<script type="text/javascript" src="views/team/view.js"></script>
+	<script type="text/javascript" src="views/guide/view.js"></script>
+	<script type="text/javascript" src="views/contact/view.js"></script>
+	<script type="text/javascript" src="views/about/view.js"></script>
+	<script type="text/javascript" src="views/join/view.js"></script>
+	<script type="text/javascript" src="views/attension/view.js"></script>
+	<script type="text/javascript" src="views/disclaimer/view.js"></script>
+	<script type="text/javascript" src="views/privacy/view.js"></script>
+	<script type="text/javascript" src="app.js"></script>	
+	<script type="text/javascript" src="views/header/view.js"></script>
+</body>
+</html>
