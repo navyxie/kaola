@@ -5,6 +5,6 @@ angular.module('kaolaApp.AttensionView',['ngRoute'])
 		templateUrl:"views/attension/view.html",
 		controller:'attensionCtrl'
 	});
-}]).controller('attensionCtrl',[function(){
-
+}]).controller('attensionCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(102);
 }]);

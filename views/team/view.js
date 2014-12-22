@@ -5,6 +5,6 @@ angular.module('kaolaApp.TeamView',['ngRoute'])
 		templateUrl:"views/team/view.html",
 		controller:'teamCtrl'
 	});
-}]).controller('teamCtrl',[function(){
-
+}]).controller('teamCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(1);
 }]);

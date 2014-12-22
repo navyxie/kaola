@@ -5,6 +5,6 @@ angular.module('kaolaApp.PrivacyView',['ngRoute'])
 		templateUrl:"views/privacy/view.html",
 		controller:'privacyCtrl'
 	});
-}]).controller('privacyCtrl',[function(){
-
+}]).controller('privacyCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(105);
 }]);

@@ -5,6 +5,6 @@ angular.module('kaolaApp.DisclaimerView',['ngRoute'])
 		templateUrl:"views/disclaimer/view.html",
 		controller:'disclaimerCtrl'
 	});
-}]).controller('disclaimerCtrl',[function(){
-
+}]).controller('disclaimerCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(104);
 }]);

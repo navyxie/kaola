@@ -5,13 +5,14 @@ angular.module('kaolaApp.slideDirective',[])
 		restrict: 'ECA',
 		scope:{
 			index:"@slideIndex",
+			space:"@slideSpace",
 			name:"@slideName"
 		},
 		link:function(scope, element, attr){
 			scope.index = scope.index  || 0;
-			// console.log(scope.name);
 			var children = element.children();
-			var len = children.length;			
+			var len = children.length;
+			var space = scope.slideSpace || 3000;			
 			function updateDom(index){
 				angular.forEach(children,function(item,key){
 					if(index == key){
@@ -22,13 +23,21 @@ angular.module('kaolaApp.slideDirective',[])
 				});
 			}
 			updateDom(scope.index);
-			$interval(function(){
-				++scope.index;
-				if(scope.index >= len){
-					scope.index = 0;
-				}
-				updateDom(scope.index);
-			},3000);
+			var intervalTime = startSlide();//$interval.cancel(intervalTime)
+			function startSlide(){
+				return $interval(function(){
+					++scope.index;
+					if(scope.index >= len){
+						scope.index = 0;
+					}
+					updateDom(scope.index);
+				},space);
+			}
+			element.on('mouseenter',function(){
+				intervalTime && $interval.cancel(intervalTime)
+			}).on('mouseleave',function(){
+				intervalTime = startSlide();
+			});
 		}
 	}
 }]).controller('sliderCtrl',function($scope){

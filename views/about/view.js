@@ -5,6 +5,6 @@ angular.module('kaolaApp.AboutView',['ngRoute'])
 		templateUrl:"views/about/view.html",
 		controller:'aboutCtrl'
 	});
-}]).controller('aboutCtrl',[function(){
-
+}]).controller('aboutCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(100);
 }]);

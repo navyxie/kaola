@@ -5,6 +5,6 @@ angular.module('kaolaApp.GuideView',['ngRoute'])
 		templateUrl:"views/guide/view.html",
 		controller:'guideCtrl'
 	});
-}]).controller('guideCtrl',[function(){
-
+}]).controller('guideCtrl',['$rootScope','$location',function($rootScope,$location){
+	$rootScope.setNavIndex(2);
 }]);

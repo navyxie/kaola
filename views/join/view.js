@@ -5,6 +5,6 @@ angular.module('kaolaApp.JoinView',['ngRoute'])
 		templateUrl:"views/join/view.html",
 		controller:'joinCtrl'
 	});
-}]).controller('joinCtrl',[function(){
-
+}]).controller('joinCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(103);
 }]);

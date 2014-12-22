@@ -5,6 +5,6 @@ angular.module('kaolaApp.ContactView',['ngRoute'])
 		templateUrl:"views/contact/view.html",
 		controller:'contactCtrl'
 	});
-}]).controller('contactCtrl',[function(){
-
+}]).controller('contactCtrl',['$rootScope',function($rootScope){
+	$rootScope.setNavIndex(101);
 }]);

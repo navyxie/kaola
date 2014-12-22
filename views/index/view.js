@@ -1,11 +1,13 @@
 'use strict';
+var duScrollDuration = 350;
 angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','duScroll'])
 .config(['$routeProvider',function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl:"views/index/view.html",
 		controller:'indexCtrl'
 	});
-}]).controller('indexCtrl',['$scope','$window','$document','$interval','$timeout',function($scope,$window,$document,$interval,$timeout){
+}]).controller('indexCtrl',['$scope','$window','$document','$interval','$timeout','$rootScope',function($scope,$window,$document,$interval,$timeout,$rootScope){
+	$rootScope.setNavIndex(0);
 	var i = 0;
 	var defaultTop = 0;
 	var flag = false;
@@ -13,7 +15,6 @@ angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','duScro
 	var scrollFn = function(){
 		if(!flag && defaultTop != $document.scrollTop()){
 			flag = true;
-			console.log(defaultTop,$document.scrollTop())
 			if(defaultTop > $document.scrollTop()){
 				direction = 'up';
 				--i;
@@ -21,14 +22,15 @@ angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','duScro
 				++i;
 				direction = 'down';
 			}			
-			console.log(direction);
-			console.log(i);
-			$document.scrollTop(200*(++i));
+			$document.scrollTop(1000*i);
 			$timeout(function(){
 				defaultTop = $document.scrollTop();
 				flag = false;
-			},350);			
+			},duScrollDuration);			
 		}
-	}
+	}	
 	$document.on('scroll',scrollFn);
-}]).value('duScrollOffset', 30);
+	$scope.$on('$destroy',function(){
+		$document.off('scroll',scrollFn);
+	})
+}]).value('duScrollDuration', duScrollDuration);
