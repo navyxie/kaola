@@ -1,6 +1,6 @@
 'use strict';
 var duScrollDuration = 350;
-angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','duScroll'])
+angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','kaolaApp.sliderDirective','duScroll'])
 .config(['$routeProvider',function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl:"views/index/view.html",
