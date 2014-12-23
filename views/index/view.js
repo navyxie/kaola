@@ -1,6 +1,6 @@
 'use strict';
 var duScrollDuration = 350;
-angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','kaolaApp.sliderDirective','duScroll'])
+angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.carouselDirective','kaolaApp.sliderDirective','duScroll'])
 .config(['$routeProvider',function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl:"views/index/view.html",
@@ -12,6 +12,7 @@ angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','kaolaA
 	var defaultTop = 0;
 	var flag = false;
 	var direction = null;
+	var showIncomeTextDom = document.getElementById('showIncomeText'); 
 	var scrollFn = function(){
 		if(!flag && defaultTop != $document.scrollTop()){
 			flag = true;
@@ -22,7 +23,7 @@ angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','kaolaA
 				++i;
 				direction = 'down';
 			}			
-			$document.scrollTop(1000*i);
+			$document.scrollTop(200*i);
 			$timeout(function(){
 				defaultTop = $document.scrollTop();
 				flag = false;
@@ -32,5 +33,12 @@ angular.module('kaolaApp.IndexView',['ngRoute','kaolaApp.slideDirective','kaolaA
 	$document.on('scroll',scrollFn);
 	$scope.$on('$destroy',function(){
 		$document.off('scroll',scrollFn);
-	})
+	});
+	function updateshowIncomeText(text){
+		showIncomeText.innerHTML = text;
+	}
+	$scope.handlerCbf = function(distance,slideWidth){
+		updateshowIncomeText(((distance/slideWidth)*100).toFixed(1) + '%');
+		// $scope.slideRate = ((distance/slideWidth)*100).toFixed(1) + '%';//angular has Performance problems
+	}
 }]).value('duScrollDuration', duScrollDuration);
